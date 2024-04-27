@@ -1,0 +1,2 @@
+require("indy")
+print("hello")
