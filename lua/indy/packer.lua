@@ -50,5 +50,6 @@ return require('packer').startup(function(use)
 -- 		"neovim/nvim-lspconfig",
 -- 	}
 
+	use('ThePrimeagen/vim-be-good')
 
 end)
