@@ -1,2 +1,1 @@
 require("indy")
-print("hello")
