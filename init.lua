@@ -1,1 +1,2 @@
-require("indy")
+vim.opt.paste = true
+require('indy')
