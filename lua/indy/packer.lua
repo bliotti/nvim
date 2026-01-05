@@ -44,19 +44,27 @@ return require('packer').startup(function(use)
     use 'mbbill/undotree'
     use 'tpope/vim-fugitive'
 
-    -- LSP and Mason setup
-    use({
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x', -- if your lsp.lua uses lsp.preset(...), change to 'v1.x'
-        requires = {'neovim/nvim-lspconfig', 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim',
-                    'hrsh7th/nvim-cmp', 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip'},
-        config = function()
-            require('mason').setup()
-            require('mason-lspconfig').setup({
-                ensure_installed = {'lua_ls', 'pyright'}
-            })
-        end
-    })
+    -- LSP core
+    use 'neovim/nvim-lspconfig'
+
+    -- Mason
+    use {
+        'williamboman/mason.nvim',
+        run = ':MasonUpdate'
+    }
+
+    use {
+        'williamboman/mason-lspconfig.nvim',
+        requires = { 'neovim/nvim-lspconfig' },
+    }
+
+    -- Completion
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'L3MON4D3/LuaSnip'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
 
     -- Fun utilities
     use 'folke/zen-mode.nvim'
