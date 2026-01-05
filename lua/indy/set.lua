@@ -1,3 +1,4 @@
+-- vim.opt.paste = true
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
