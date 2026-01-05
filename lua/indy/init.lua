@@ -1,4 +1,4 @@
-vim.g.paste = true
+-- vim.g.paste = true
 
 require("indy.remap")
 require("indy.set")
