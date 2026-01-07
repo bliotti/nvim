@@ -2,4 +2,4 @@
 
 require("indy.remap")
 require("indy.set")
-require("indy.packer")
+require("indy.lazy_init")
